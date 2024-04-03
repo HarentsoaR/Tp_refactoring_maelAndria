@@ -1,43 +1,13 @@
 package iut.bad;
 
-public class Femme {
-    private String nom;
-    private String prenom;
-    private int age;
-
-    // Constructeur par défaut
-    public Femme() {
-    }
-
-    // Constructeur paramétré
-    public Femme(String nom, String prenom, int age) {
-        this.nom = nom;
-        this.prenom = prenom;
-        this.age = age;
-    }
-
-    // Getters et Setters pour chaque champ
-    public String getNom() {
-        return nom;
-    }
-
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
-
-    public String getPrenom() {
-        return prenom;
-    }
-
-    public void setPrenom(String prenom) {
-        this.prenom = prenom;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
+public class Femme extends Humain{
+	public Femme(String nom, String prenom, Integer age) {
+		super(nom,prenom,age);
+	}
+	
+	public static void main(String[] args) {
+		Homme homme = new Homme("Dupont", "Jean", 30);
+		Femme femme = new Femme("Durand", "Marie", 28);
+		System.out.println(femme.nom + " " + femme.prenom);femme.ami(homme, 100);
+	}
 }
